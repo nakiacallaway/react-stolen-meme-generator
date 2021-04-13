@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 const Meme = () => {
   const [meme, setMeme] = useState({});
   const [memeData, setMemeData] = useState([]);
- 
+  // const [memeIndex, setMemeIndex] = useState(0);
   const [captions, setCaptions] = useState([]);
   let history = useHistory();
 
@@ -16,6 +16,7 @@ const Meme = () => {
     //     // // console.log(memes);
     //     // setMemeData(memes);
     //   })
+
     //   .catch(err => {
     //     console.log(err);
     //   });
@@ -23,16 +24,17 @@ const Meme = () => {
       try {
         let response = await fetch('https://api.imgflip.com/get_memes');
         response = await response.json();
-       
+        // console.log('after the await for json()', response);
         const { memes } = response.data;
         setMemeData(memes);
-      
+        // console.log(memes);
         setMeme(memes[0]);
         // setMemeComponent();
       } catch (error) {
         console.log(error);
       }
     };
+
 
     fetchMemes();
   }, []);
@@ -46,7 +48,7 @@ const Meme = () => {
       }
 
       setCaptions(caps);
-      // console.log(caps);
+      
     }
   }, [meme]);
 
