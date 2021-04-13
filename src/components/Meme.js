@@ -16,7 +16,6 @@ const Meme = () => {
     //     // // console.log(memes);
     //     // setMemeData(memes);
     //   })
-
     //   .catch(err => {
     //     console.log(err);
     //   });
