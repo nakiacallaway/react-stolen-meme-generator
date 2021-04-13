@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 const Meme = () => {
   const [meme, setMeme] = useState({});
   const [memeData, setMemeData] = useState([]);
-  // const [memeIndex, setMemeIndex] = useState(0);
+ 
   const [captions, setCaptions] = useState([]);
   let history = useHistory();
 
