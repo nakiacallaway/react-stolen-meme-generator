@@ -23,10 +23,10 @@ const Meme = () => {
       try {
         let response = await fetch('https://api.imgflip.com/get_memes');
         response = await response.json();
-        // console.log('after the await for json()', response);
+       
         const { memes } = response.data;
         setMemeData(memes);
-        // console.log(memes);
+      
         setMeme(memes[0]);
         // setMemeComponent();
       } catch (error) {
